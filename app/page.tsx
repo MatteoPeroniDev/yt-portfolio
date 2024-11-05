@@ -20,7 +20,7 @@ export default function Home() {
         <div className="max-w-xl space-y-6">
           <h1 className="font-title text-center text-3xl">Ciao 👋, sono Matteo Peroni</h1>
           <h2 className="title-gradient text-center text-4xl lg:text-6xl">Web Designer e Sviluppatore Web</h2>
-          <p className="font-text text-center text-xl">Ho un'esperienza di 10 anni nel mondo della programmazione web. Utilizzo le ultime tecnologie per sviluppare prodotti altamente performanti. Non smetto mai di essere aggiornato sulle ultime tendenze del web e del mondo dello sviluppo.</p>
+          <p className="font-text text-center text-xl">Ho un&apos;esperienza di 10 anni nel mondo della programmazione web. Utilizzo le ultime tecnologie per sviluppare prodotti altamente performanti. Non smetto mai di essere aggiornato sulle ultime tendenze del web e del mondo dello sviluppo.</p>
           <div className="flex flex-col lg:flex-row justify-center items-center gap-4">
             <Cta label="Contattami" link="#contatti">
               <SendIcon className="size-6" />

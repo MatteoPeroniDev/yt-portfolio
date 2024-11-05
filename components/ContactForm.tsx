@@ -10,16 +10,16 @@ function ContactForm() {
     message: '',
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prevFormData) => ({
+      ...prevFormData,
       [name]: value,
-    });
+    }));
   };
 
-  function handleSubmit(e: any) {
-    e.preventDefault()
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
 
     emailjs.send(
       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
