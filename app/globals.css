@@ -3,19 +3,46 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #1e1e1e;
+  --foreground: #ffffff;
+  --foreground-muted: #ffffff80;
+  --accent-green: #9bffb0;
+  --accent-blue: #20fcf9;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-ibm-plex-sans);
+}
+
+.font-text {
+  color: var(--foreground-muted);
+  font-family: var(--font-ibm-plex-sans);
+}
+
+.font-title {
+  font-weight: 500;
+  font-family: var(--font-ibm-plex-sans-condensed);
+}
+
+.title-gradient {
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--font-ibm-plex-sans-condensed);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-green);
+  color: var(--background);
+  font-family: var(--font-ibm-plex-sans-condensed);
+  font-weight: 500;
+  border-radius: 64px;
+  padding: 0.5rem 1rem;
 }

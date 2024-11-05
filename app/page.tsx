@@ -1,101 +1,97 @@
-import Image from "next/image";
+import Image from "next/image"
+import ProfilePic from "/assets/images/profile-pic.jpg"
+import Cta from "@/components/Cta";
+import Chip from "@/components/Chip";
+import { SKILLS } from "@/data/skills";
+import { PROJECTS } from "@/data/projects";
+import Card from "@/components/Card";
+import Slide from "@/components/Slide";
+import { WORKFLOW } from "@/data/workflow";
+import SendIcon from "@/assets/icons/send.svg";
+import DownloadIcon from "@/assets/icons/download.svg";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="container mx-auto flex flex-col p-6">
+      {/* Hero */}
+      <section className="flex flex-col justify-center items-center space-y-6 min-h-svh py-24">
+        <Image src={ProfilePic} alt="Matteo Peroni" width={200} height={200} className="size-[200px] object-cover rounded-full" />
+        <div className="max-w-xl space-y-6">
+          <h1 className="font-title text-center text-3xl">Ciao 👋, sono Matteo Peroni</h1>
+          <h2 className="title-gradient text-center text-4xl lg:text-6xl">Web Designer e Sviluppatore Web</h2>
+          <p className="font-text text-center text-xl">Ho un'esperienza di 10 anni nel mondo della programmazione web. Utilizzo le ultime tecnologie per sviluppare prodotti altamente performanti. Non smetto mai di essere aggiornato sulle ultime tendenze del web e del mondo dello sviluppo.</p>
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-4">
+            <Cta label="Contattami" link="#contatti">
+              <SendIcon className="size-6" />
+            </Cta>
+            <Cta label="Download CV" link="https://github.com/MatteoPeroniDev" target="_blank">
+              <DownloadIcon className="size-6" />
+            </Cta>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+      {/* About */}
+      <section id="about" className="flex flex-col justify-center items-center space-y-6 pb-24 lg:pb-48">
+        <div className="max-w-xl space-y-6">
+          <h2 className="font-title text-center text-4xl">Di più su di me 🧑‍💻</h2>
+          <p className="font-text text-xl">
+            Sono un appassionato sviluppatore web full stack con 10 anni di esperienza nella creazione di applicazioni web belle e funzionali.
+            Il mio viaggio nella tecnologia è iniziato con la curiosità per come funzionano le cose su Internet e si è evoluto in una carriera appagante in cui riesco a dare vita alle idee attraverso il codice.
+            <br />
+            <br />
+            Quando non sto programmando, puoi trovarmi ad esplorare nuovi sentieri escursionistici o a sperimentare nuove ricette in cucina.
+          </p>
+        </div>
+      </section>
+      {/* Skills */}
+      <section id="skills" className="flex flex-col justify-center items-center space-y-6 pb-24 lg:pb-48">
+        <div className="max-w-xl space-y-6">
+          <h2 className="font-title text-center text-4xl">Cosa so fare 💪</h2>
+          <div className="flex gap-6 flex-wrap justify-center">
+            {
+              SKILLS.map((skill, index) => (
+                <Chip key={index} label={skill.name} />
+              ))
+            }
+          </div>
+        </div>
+      </section>
+      {/* Projects */}
+      <section id="projects" className="flex flex-col justify-center items-center space-y-6 pb-24 lg:pb-48">
+        <div className="space-y-6">
+          <h2 className="font-title text-center text-4xl">I miei progetti 🚀</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {
+              PROJECTS.map((project, index) => (
+                <Card key={index} title={project.title} description={project.description} image={project.image} link={project.link} />
+              ))
+            }
+          </div>
+        </div>
+      </section>
+      {/* Workflow */}
+      <section id="workflow" className="flex flex-col justify-center items-center space-y-6 pb-24 lg:pb-48">
+        <div className="space-y-6">
+          <h2 className="font-title text-center text-4xl">Il mio workflow 🛠️</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {WORKFLOW.map((slide, index) => (
+              <Slide key={index} title={slide.title} description={slide.description} icon={slide.icon} />
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Contact */}
+      <section id="contacts" className="flex flex-col justify-center items-center space-y-6 pb-24">
+        <div className="space-y-6">
+          <h2 className="font-title text-center text-4xl">Mettiamoci in contatto 📲</h2>
+          <ContactForm />
+        </div>
+      </section>
+      { /* Footer */}
+      <footer id="contatti" className="flex flex-col justify-center items-center pt-40 pb-4 text-foreground-muted">
+        <p>© {new Date().getFullYear()} Matteo Peroni. All rights reserved.</p>
       </footer>
-    </div>
+    </main>
   );
 }
